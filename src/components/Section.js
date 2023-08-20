@@ -1,14 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Fade } from 'react-awesome-reveal'
+
 
 function Section({ title, startingPrice, description, leftBtnText, rightBtnText, backgroundImg }) {
     return (
         <Wrap bgImage={backgroundImg}>
-            <ItemText>
-                <h1>{title}</h1>
-                <p>{startingPrice}</p>
-                <p>{description}</p>
-            </ItemText>
+            <Fade bottom>
+                <ItemText>
+                    <h1>{title}</h1>
+                    <p>{startingPrice}</p>
+                    <p>{description}</p>
+                </ItemText>
+            </Fade>
+            <Fade bottom>
             <ButtonGroup>
                 <LeftButton>
                     { leftBtnText }
@@ -20,7 +25,7 @@ function Section({ title, startingPrice, description, leftBtnText, rightBtnText,
                 
                 }
             </ButtonGroup>
-            
+            </Fade>
         </Wrap>
 )
 }
